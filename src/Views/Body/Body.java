@@ -1,15 +1,11 @@
 package Views.Body;
 
-import Views.Header.Header;
-
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class Body extends JPanel {
-
-    private Header header;
-
-    public Body() {
+    public Body(ActionListener actionListener) {
         configBody();
         createComponents();
     }
@@ -19,7 +15,5 @@ public class Body extends JPanel {
     }
 
     private void createComponents() {
-        header = new Header();
-        add(header, BorderLayout.NORTH);
     }
 }

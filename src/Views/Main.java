@@ -1,29 +1,33 @@
 package Views;
 
+import Presenter.Presenter;
 import Views.Body.Body;
+import Views.Header.Header;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class Main extends JFrame {
 
-    private Body body;
-
-    public Main (){
+    private JMainPanel jMainPanel;
+    public Main (ActionListener actionListener){
         configMain();
-        createComponents();
+        createComponents(actionListener);
+        this.setVisible(true);
     }
 
     private void configMain() {
         setTitle("NFA");
         setExtendedState(MAXIMIZED_BOTH);
-        setLayout(new BorderLayout());
+        this.setLayout(new BorderLayout());
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setVisible(true);
+
     }
 
-    private void createComponents(){
-        body = new Body();
+    private void createComponents(ActionListener actionListener){
+        jMainPanel = new JMainPanel(actionListener);
+        this.getContentPane().add(jMainPanel,BorderLayout.CENTER);
     }
 
 }
