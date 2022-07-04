@@ -2,9 +2,12 @@ package Views.Models;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 
 public class JModelMenuItem extends JMenuItem{
+
 
 	public JModelMenuItem(String text) {
 		super(text);
@@ -14,8 +17,15 @@ public class JModelMenuItem extends JMenuItem{
 		super(text);
 		this.setFont(font);
 		this.setBackground(background);
-
 	}
+
+	public JModelMenuItem(String text, Font font, Color background,Color foreground) {
+		super(text);
+		this.setFont(font);
+		this.setBackground(background);
+		this.setForeground(foreground);
+	}
+
 	
 	public JModelMenuItem(String text, String imagePath, Font font, int width, int height) {
 		super(text);
@@ -30,6 +40,10 @@ public class JModelMenuItem extends JMenuItem{
 		ImageIcon image = new ImageIcon(getClass().getResource(imagePath));
 		Icon icon = new ImageIcon(image.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH));
 		this.setIcon(icon);
+		setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		setForeground(Color.white);
+		setBorderPainted(false);
+		setFocusable(false);
 		this.setFont(font);
 		this.setBackground(colors[0]);
 		this.setForeground(colors[1]);

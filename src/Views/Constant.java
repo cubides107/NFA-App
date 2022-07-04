@@ -30,4 +30,13 @@ public class Constant {
     public static final Font FONT_HELVETICA_15 = new Font("Helvetica", Font.PLAIN, 15);
     public static final Font FONT_HELVETICA_13 = new Font("Helvetica",Font.PLAIN, 13);
 
+    //Images
+
+    public static final String IMG_PATH_BANNER = "/images/NFA-Automate.png";
+    public static final String IMG_PATH_FILE = "/images/file.png";
+    public static final String IMG_PATH_INPUT = "/images/input.png";
+    public static final String IMG_PATH_HELP = "/images/help.png";
+    public static final String IMG_PATH_CLOSE = "/images/close.png";
+
+
 }
