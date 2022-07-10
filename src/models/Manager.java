@@ -30,4 +30,14 @@ public class Manager {
     public void setStateList(List<State> stateList) {
         this.stateList = stateList;
     }
+
+    public void createState(String name,boolean isFinal){
+        State state = new State(name,isFinal);
+        stateList.add(state);
+    }
+
+    public void createTransition(String symbol,State originSate,State targetSate){
+        Transition transition = new Transition(symbol,targetSate);
+        originSate.addTransition(transition);
+    }
 }
